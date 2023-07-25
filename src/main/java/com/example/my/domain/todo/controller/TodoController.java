@@ -13,7 +13,7 @@ public class TodoController {
 
     private final TodoService todoService;
 
-    @GetMapping({"", "/"})
+    @GetMapping({"", "/"}) // 슬레시가 없는 경로 있는 경로 둘다 와 (배열경로)
     public ModelAndView todoTablePage(HttpSession session) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("todo/table");

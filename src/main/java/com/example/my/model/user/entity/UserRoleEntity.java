@@ -19,7 +19,7 @@ public class UserRoleEntity {
     @Column(name = "idx", nullable = false, unique = true)
     private Integer idx;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY) 
     @JoinColumn(name = "user_idx", referencedColumnName = "idx", updatable = false, nullable = false)
     private UserEntity userEntity;
 

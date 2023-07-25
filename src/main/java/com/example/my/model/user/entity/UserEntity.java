@@ -38,6 +38,7 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "userEntity", fetch = FetchType.EAGER)
     private List<UserRoleEntity> userRoleEntityList;
+    // mappedby랑 상대 컬럼과 일치해야함
 
     @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY)
     private List<TodoEntity> todoEntityList;
