@@ -20,14 +20,14 @@ public class AuthControllerApiV1 {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody ReqLoginDTO dto, HttpSession session) {
-        // TODO : 서비스에서 로그인하기
-        return null;
+        //  서비스에서 로그인하기
+        return authServiceApiV1.login(dto, session);
     }
 
     @PostMapping("/join")
     public ResponseEntity<?> join(@RequestBody ReqJoinDTO dto) {
-        // TODO : 서비스에서 회원가입하기
-        return null;
+        //  서비스에서 회원가입하기
+        return authServiceApiV1.join(dto);
     }
 
 }

@@ -114,6 +114,28 @@
         }
 
         // TODO 로그인 요청
+
+        const dto = {
+          user : {
+            id : document.getElementById("id").value,
+            password : document.getElementById("password").value
+          }
+        }
+
+        fetch("/api/v1/auth/login",{
+          method : "POST",
+          headers : {
+            "Content-Type" : "application/json;charset=utf-8"
+          },
+          body : JSON.stringify(dto)
+        })
+        .then(response => response.json())
+        .then(result => {
+          alert(result.message);
+          if(result.code === 0) {
+            location.replace("/");
+          }
+        });
     };
 
     // 아이디와 비밀번호 입력창이 비어있는지 검사하는 함수
