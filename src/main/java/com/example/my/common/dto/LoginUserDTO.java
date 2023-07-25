@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Getter
+@ToString
 public class LoginUserDTO {
 
     private User user;
@@ -26,6 +28,7 @@ public class LoginUserDTO {
     @AllArgsConstructor
     @Builder
     @Getter
+    @ToString
     public static class User {
         private Long idx;
         private String id;

@@ -69,7 +69,7 @@ public class AuthServiceApiV1 {
         //  세션에 로그인 유저 정보 저장
         session.setAttribute("dto", LoginUserDTO.of(userEntity));
 
-        // TODO : 응답 데이터로 리턴하기 (로그인에 성공하였습니다.)
+        //  응답 데이터로 리턴하기 (로그인에 성공하였습니다.)
             return new ResponseEntity<>(
                         ResponseDTO.builder()
                         .code(0)
