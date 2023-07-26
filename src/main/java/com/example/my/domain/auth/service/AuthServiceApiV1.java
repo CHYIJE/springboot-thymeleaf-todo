@@ -27,25 +27,26 @@ public class AuthServiceApiV1 {
     private final UserRepository userRepository;
 
     public ResponseEntity<?> login(ReqLoginDTO dto, HttpSession session) {
-        // 유효성 체크
-        if(
-            dto.getUser().getId() == null ||
-            dto.getUser().getId().equals("") ||
-            dto.getUser().getPassword() == null ||
-            dto.getUser().getPassword().equals("")
-            ){
+        // // 유효성 체크
+        // if(
+        //     dto.getUser() == null ||
+        //     dto.getUser().getId() == null ||
+        //     dto.getUser().getId().equals("") ||
+        //     dto.getUser().getPassword() == null ||
+        //     dto.getUser().getPassword().equals("")
+        //     ){
 
-                    throw new BadRequestException("아이디나 비밀번호를 입력해주세요");
-
-            //     return new ResponseEntity<>(
-            //         ResponseDTO.builder()
-            //         .code(1)
-            //         .message("아이디나 비밀번호를 입력해주세요")
-            //         .build(),
-            //         HttpStatus.BAD_REQUEST
-            //     );
-            // }
-            }
+        //             throw new BadRequestException("아이디나 비밀번호를 입력해주세요");
+            
+        //     //     return new ResponseEntity<>(
+        //     //         ResponseDTO.builder()
+        //     //         .code(1)
+        //     //         .message("아이디나 비밀번호를 입력해주세요")
+        //     //         .build(),
+        //     //         HttpStatus.BAD_REQUEST
+        //     //     );
+        //     // }
+        // }
         // 리파지토리에서 아이디로 삭제되지 않은 유저 찾기
         Optional<UserEntity> userEntityOptional = userRepository.findByIdAndDeleteDateIsNull(dto.getUser().getId());
         
