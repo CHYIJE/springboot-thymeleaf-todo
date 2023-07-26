@@ -47,7 +47,7 @@ public class AuthController {
 
         session.invalidate();
 
-        return "auth/logout";
+        return "redirect:/auth/login";
     }
 
 }
