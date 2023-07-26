@@ -20,7 +20,7 @@ public class AuthControllerApiV1 {
     private final AuthServiceApiV1 authServiceApiV1;
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody ReqLoginDTO dto, HttpSession session) {
+    public ResponseEntity<?> login(@Valid @RequestBody ReqLoginDTO dto, HttpSession session) {
         //  서비스에서 로그인하기
         return authServiceApiV1.login(dto, session);
     }

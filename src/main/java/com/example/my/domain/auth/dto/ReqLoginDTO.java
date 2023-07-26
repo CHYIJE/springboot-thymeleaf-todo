@@ -1,6 +1,8 @@
 package com.example.my.domain.auth.dto;
 
-import com.example.my.model.user.entity.UserEntity;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,6 +13,8 @@ import lombok.NoArgsConstructor;
 @Getter
 public class ReqLoginDTO {
 
+    @Valid
+    @NotNull
     private User user;
 
     @NoArgsConstructor
@@ -18,7 +22,11 @@ public class ReqLoginDTO {
     @Builder
     @Getter
     public static class User {
+        
+        @NotBlank
         private String id;
+
+        @NotBlank
         private String password;
     }
 

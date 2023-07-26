@@ -20,4 +20,6 @@ public interface TodoRepository extends JpaRepository<TodoEntity, Long> {
     Optional<TodoEntity> findByIdx(Long idx);
     Optional<TodoEntity> findByIdxAndDeleteDateIsNull(Long idx);
 
+   
+
 }
