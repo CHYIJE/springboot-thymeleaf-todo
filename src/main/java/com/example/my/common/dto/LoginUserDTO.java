@@ -33,7 +33,7 @@ public class LoginUserDTO {
         private Long idx;
         private String id;
         private String password;
-        private List<String> roleList;
+        private List<String> roleList; 
 
         public static User fromEntity(UserEntity userEntity) {
             return User.builder()
