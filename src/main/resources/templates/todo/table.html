@@ -44,32 +44,21 @@
         />
         <hr/>
         <ul id="todoList" class="list-unstyled">
-          <li class="ui-state-default" >
+          <li class="ui-state-default" th:each="todo : ${dto.todoList}">
             <div class="checkbox">
               <label>
                 <input
                     onchange="setDoneY(0)"
                     type="checkbox"
                 />
-                <span>밥먹기</span>
-              </label>
-            </div>
-          </li>
-          <li class="ui-state-default" >
-            <div class="checkbox">
-              <label>
-                <input
-                    onchange="setDoneY(0)"
-                    type="checkbox"
-                />
-                <span>잠자기</span>
+                <span th:text="${todo.content}"></span>
               </label>
             </div>
           </li>
         </ul>
         <div class="todo-footer">
           <strong>
-            <span id="todoCount" class="count-todos">2</span>
+            <span id="todoCount" class="count-todos" th:text="${dto.todoList.size()}"></span>
           </strong>
           항목 남았음
         </div>
@@ -79,7 +68,7 @@
       <div class="todolist">
         <h1>DONE LIST</h1>
         <ul id="doneList" class="list-unstyled">
-          <li>
+          <li th:each="todo : ${dto.doneList}">
             <div class="checkbox">
               <label>
                 <input
@@ -87,25 +76,7 @@
                     class="remove-item"
                     type="checkbox"
                 />
-                <span>일어나기</span>
-              </label>
-              <button
-                  onclick="setDelete(0)"
-                  class="remove-item btn btn-default btn-xs pull-right"
-              >
-                <span class="glyphicon glyphicon-remove"></span>
-              </button>
-            </div>
-          </li>
-          <li>
-            <div class="checkbox">
-              <label>
-                <input
-                    onchange="setDoneN(0)"
-                    class="remove-item"
-                    type="checkbox"
-                />
-                <span>세수하기</span>
+                <span th:text="${todo.content}"></span>
               </label>
               <button
                   onclick="setDelete(0)"

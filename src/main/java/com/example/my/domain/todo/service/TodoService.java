@@ -24,9 +24,9 @@ public class TodoService {
         List<TodoEntity> todoEntityList = todoRepository.findByUserEntity_IdxAndDeleteDateIsNull(loginUserDTO.getUser().getIdx());
 
         
+        ResTodoTableDTO dto = ResTodoTableDTO.of(todoEntityList);
 
-
-        return null;
+        return dto;
     }
 
 }
